@@ -1,0 +1,30 @@
+#server
+server:
+  servlet:
+    context-path: /
+  port: 80
+
+#spring
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/pages/
+    suffix: .html
+  datasource:
+    url: jdbc:mysql://172.0.17.8:3306/LIMSDB?useSSL=false
+    username: root
+    password: 123456Ge?
+
+#mybatis
+mybatis-plus:
+  configuration:
+    default-statement-timeout: 30
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:/mapper/**/*.xml
+
+
+#logging
+logging:
+  level:
+    com.lc: debug
+
+
