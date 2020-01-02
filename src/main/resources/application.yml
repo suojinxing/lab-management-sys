@@ -10,9 +10,9 @@ spring:
     prefix: classpath:/templates/pages/
     suffix: .html
   datasource:
-    url: jdbc:mysql://172.0.17.8:3306/LIMSDB?useSSL=false
+    url: jdbc:mysql://127.0.0.1/tedu?useSSL=false&characterEncoding=utf8
     username: root
-    password: 123456Ge?
+    password: root
 
 #mybatis
 mybatis-plus:
