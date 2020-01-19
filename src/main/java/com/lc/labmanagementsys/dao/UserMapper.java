@@ -1,5 +1,6 @@
 package com.lc.labmanagementsys.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lc.labmanagementsys.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,7 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @email 2449365663@qq.com
  */
 @Mapper
-public interface UserMapper {
+public interface UserMapper extends BaseMapper<User> {
 	/**
 	 * 插入用户信息
 	 * 

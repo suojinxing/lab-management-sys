@@ -1,5 +1,9 @@
 package com.lc.labmanagementsys.service;
 
+import com.lc.labmanagementsys.pojo.User;
+
+import java.util.List;
+
 /**
  * 
  * @author HaiDi
@@ -8,4 +12,6 @@ package com.lc.labmanagementsys.service;
  */
 public interface UserService {
 	int getRowCount();
+
+	List<User> getUserList();
 }

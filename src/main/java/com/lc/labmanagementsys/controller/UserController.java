@@ -39,6 +39,7 @@ public class UserController {
         userList.add(new User("suojinxing4","suojinxing",2));
         userList.add(new User("suojinxing3","suojinxing",2));
         userList.add(new User("suojinxing2","suojinxing",2));
+        userList = userService.getUserList();
         result.setData(userList);
         return result;
     }
