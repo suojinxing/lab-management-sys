@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户列表展示</title>
+  <script src="/js/axios.min.js"></script>
+  <script src="/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+  <h2>{{users}}</h2>
+  <ul>
+    <li v-for="(user) in users">
+      {{user.status}}-{{user.username}}-{{user.password}}
+    </li>
+  </ul>
+</div>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      message: '用户列表展示',
+      users: []
+    },
+    methods: {
+      init() {
+        console.log("初始化函数。")
+      }
+    },
+    created() {
+      // 该Vue实例创建的时候执行该函数
+      axios.get('/getUsers')
+          .then(res => {
+            console.log(res.data.data);
+            this.users = res.data.data
+          })
+      // 调用自身函数
+      this.init()
+    }
+  })
+</script>
+</body>
+</html>
