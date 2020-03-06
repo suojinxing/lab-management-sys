@@ -1,20 +1,28 @@
 package com.lc.labmanagementsys.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
+import java.util.Date;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@ToString
 @Accessors(chain = true)
-public class Laboratory implements Serializable {
-    private static final long serialVersionUID = -8475615696826844447L;
+@TableName("laboratory")
+public class Laboratory {
+    @TableId(type = IdType.UUID)
+    private String uuid;
+    private String id;
     private String name;
-    private String location;
+    private String operator;
+    private String capacity;
+    private Date startTime;
+    private Date endTime;
+    private Integer enable;
 }

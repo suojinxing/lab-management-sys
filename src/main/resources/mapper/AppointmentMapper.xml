@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 实验室科室预约的映射文件 namespace值为对应接口的全路径 -->
+<mapper namespace="com.lc.labmanagementsys.dao.AppointmentDao">
+    <!-- 根据分页获取所有实验室科室的信息 -->
+    <select id="findByPage" resultType="com.lc.labmanagementsys.pojo.Appointment">
+		select * from APPOINTMENT
+		order by id
+		limit #{startIndex},#{pageSize}
+	</select>
+</mapper>
